@@ -8,7 +8,8 @@ int main() {
 
     cout<<a1->getNombre()<<endl;
     cout<<a1->getEdad()<<endl;
-    cout<<a1<<endl;
+    cout<<&a1<<"chao"<<endl;
+
 
     return 0;
 }
