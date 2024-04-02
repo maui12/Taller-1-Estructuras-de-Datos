@@ -32,13 +32,10 @@ bool menu() {
    	case 5:
 
    		return false;
-
    	default:
    		cout<<"Opcion invalida. ingrese otra opcion "<<endl;
    		break;
    	}
-
-
    	return true;
    }
 

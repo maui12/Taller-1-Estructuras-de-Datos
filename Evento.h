@@ -8,7 +8,7 @@ class Evento {
 
     private:
         string nombre;
-        Asistente* asistentes[30];
+        Asistente* asistentes[];
 
     public:
         Evento(string nombre);
