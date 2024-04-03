@@ -8,10 +8,11 @@ class Evento {
 
     private:
         string nombre;
-        Asistente* asistentes[];
+        Asistente *asistentes;
 
     public:
         Evento(string nombre);
+        Evento();
         string getNombre();
         void setNombre(string nombre);
         void agregarAsistente(Asistente asistente);

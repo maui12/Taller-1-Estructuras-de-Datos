@@ -1,9 +1,10 @@
 #include <iostream>
 #include "Asistente.h"
+#include "Evento.h"
 
 using namespace std;
 
-bool menu() {
+bool menu(Evento* eventos,Asistente* asistentes) {
    	int entrada = 0;
 
    	cout<<"MENU"<<endl;
@@ -37,14 +38,21 @@ bool menu() {
    		break;
    	}
    	return true;
-   }
+}
+
+void CrearNuevoEvento(Evento* eventos) {
+
+}
 
 int main() {
 
 	bool salir = true;
 
+	Evento* eventos = new Evento[100];
+	Asistente* asistentes = new Asistente[100];
+
 	do {
-		salir = menu();
+		salir = menu(eventos,asistentes);
 	}
 	while(salir);
 
