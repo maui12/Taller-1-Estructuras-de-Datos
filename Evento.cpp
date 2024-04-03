@@ -10,7 +10,7 @@ Evento::Evento(string nombre) {
 	this -> asistentes = new Asistente[100];
 }
 
-Evento::Evento() {}
+Evento::Evento(){}
 
 string Evento::getNombre() {
 	return nombre;

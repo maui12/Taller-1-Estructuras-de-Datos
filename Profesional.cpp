@@ -4,7 +4,7 @@
 
 using namespace std;
 
-class Profesional::Asistente(string nombre,int edad,string ocupacion):Asistente(nombre,edad){
+Profesional::Profesional(string nombre,int edad,string ocupacion):Asistente(nombre,edad){
     this -> ocupacion = ocupacion;
 }
 string Profesional::getOcupacion(){

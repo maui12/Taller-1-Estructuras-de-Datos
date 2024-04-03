@@ -5,6 +5,7 @@
 using namespace std;
 
 bool menu(Evento* eventos,Asistente* asistentes) {
+
    	int entrada = 0;
 
    	cout<<"MENU"<<endl;
@@ -19,7 +20,6 @@ bool menu(Evento* eventos,Asistente* asistentes) {
    	switch(entrada) {
 
    	case 1:
-
    		break;
    	case 2:
 
@@ -40,9 +40,6 @@ bool menu(Evento* eventos,Asistente* asistentes) {
    	return true;
 }
 
-void CrearNuevoEvento(Evento* eventos) {
-
-}
 
 int main() {
 
@@ -50,6 +47,8 @@ int main() {
 
 	Evento* eventos = new Evento[100];
 	Asistente* asistentes = new Asistente[100];
+
+
 
 	do {
 		salir = menu(eventos,asistentes);

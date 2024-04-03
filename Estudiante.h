@@ -11,4 +11,4 @@ class Estudiante:public Asistente{
         Estudiante(string nombre, int edad, string institucion);
         string getInstitucion();
         void setInstitucion(string institucion);
-}
+};

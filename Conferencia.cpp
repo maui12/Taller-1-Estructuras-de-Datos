@@ -4,9 +4,9 @@
 
 using namespace std;
 
-class Conferencia::Conferencia(string nombre, string tema):Evento(nombre) {
+Conferencia::Conferencia(string nombre, string tema):Evento(nombre) {
     this -> tema = tema;
-};
+}
 
 string Conferencia::getTema() {
 	return tema;

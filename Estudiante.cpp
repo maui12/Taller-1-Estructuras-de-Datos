@@ -4,7 +4,7 @@
 
 using namespace std;
 
-class Estudiante::Asistente(string nombre,int edad,string institucion):Asistente(nombre,edad){
+Estudiante::Estudiante(string nombre,int edad,string institucion):Asistente(nombre,edad){
     this -> institucion = institucion;
 }
 string Estudiante::getInstitucion(){

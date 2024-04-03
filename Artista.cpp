@@ -4,9 +4,11 @@
 
 using namespace std;
 
-class Artista::Artista(string nombre, int edad, string nombreArtistico):Asistente(nombre,edad){
+Artista::Artista(string nombre, int edad, string nombreArtistico):Asistente(nombre,edad){
+
     this -> nombreArtistico = nombreArtistico;
 }
+
 string Artista::getNombreArtistico(){
     return nombreArtistico;
 }
