@@ -10,6 +10,6 @@ class Conferencia:public Evento {
 		string tema;
 	public:
 		Conferencia(string nombre, string tema);
-		int getTema();
+		string getTema();
 		void setTema(string tema);
 };

@@ -8,7 +8,7 @@ class Conferencia::Conferencia(string nombre, string tema):Evento(nombre) {
     this -> tema = tema;
 };
 
-int Conferencia::getTema() {
+string Conferencia::getTema() {
 	return tema;
 }
 
