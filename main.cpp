@@ -11,7 +11,7 @@ bool menu(Sistema sistema) {
 
    	cout<<"MENU"<<endl;
    	cout<<"1.- Crear nuevo evento"<<endl;
-   	cout<<"2.- Registrar nuevo Asistente"<<endl;
+   	cout<<"2.- Registrar Asistente"<<endl;
    	cout<<"3.- Consultar lista de Asistentes"<<endl;
    	cout<<"4.- Generar Informe"<<endl;
    	cout<<"5.- Guardar cambios y salir"<<endl;

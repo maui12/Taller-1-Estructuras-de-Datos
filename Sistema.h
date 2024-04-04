@@ -13,6 +13,8 @@ class Sistema {
 	public:
 		Sistema();
 		void CrearEvento();
+		void registrarAsistente();
+		void getEventos();
 
 
 };
