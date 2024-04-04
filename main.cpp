@@ -1,10 +1,11 @@
 #include <iostream>
 #include "Asistente.h"
 #include "Evento.h"
+#include "Sistema.h"
 
 using namespace std;
 
-bool menu(Evento* eventos,Asistente* asistentes) {
+bool menu(Sistema sistema) {
 
    	int entrada = 0;
 
@@ -20,6 +21,7 @@ bool menu(Evento* eventos,Asistente* asistentes) {
    	switch(entrada) {
 
    	case 1:
+   		sistema.CrearEvento();
    		break;
    	case 2:
 
@@ -43,15 +45,12 @@ bool menu(Evento* eventos,Asistente* asistentes) {
 
 int main() {
 
+	Sistema sistema;
+
 	bool salir = true;
 
-	Evento* eventos = new Evento[100];
-	Asistente* asistentes = new Asistente[100];
-
-
-
 	do {
-		salir = menu(eventos,asistentes);
+		salir = menu(sistema);
 	}
 	while(salir);
 
