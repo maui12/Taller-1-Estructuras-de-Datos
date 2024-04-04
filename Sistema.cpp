@@ -1,15 +1,14 @@
 #include <iostream>
 #include "Sistema.h"
 #include "Evento.h"
-#include "Asistente.h"¨
+#include "Asistente.h"
 #include "Conferencia.h"
+#include "Concierto.h"
+#include "Taller.h"
 
 using namespace std;
 
-Sistema::Sistema() {
-	this -> eventos;
-	this -> asistentes;
-}
+Sistema::Sistema() {}
 
 void Sistema::CrearEvento() {
 	cout<<"=====Crear un nuevo Evento===== \nElija el tipo de evento: \n1)Conferencia 2)Concierto 3)Taller"<<endl;
@@ -32,13 +31,18 @@ void Sistema::CrearEvento() {
 	case 1:
 		cout<<"Conferencia: señale el tema: "<<endl;
 		cin >> atributo;
-
+		evento = new Conferencia(nombre,atributo);
 		break;
 	case 2:
+		cout<<"Concierto: señale la duracion: "<<endl;
+		cin >> atributo;
+		evento = new Concierto(nombre,stoi(atributo));
 
 		break;
 	case 3:
-
+		cout<<"Taller: señale la ubicacion: "<<endl;
+		cin >> atributo;
+		evento = new Taller(nombre,atributo);
 		break;
 
 	}
