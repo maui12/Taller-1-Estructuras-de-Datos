@@ -63,56 +63,57 @@ void Sistema::CrearEvento() {
 
 void Sistema::registrarAsistente() {
 
-	//Falta preguntar si el asistente es nuevo o existente
+	cout<<"Desea registrar un nuevo Asistente o uno ya existente? \n1)Nuevol 2)Existente"<<endl;
+	int resp;
+	cin >> resp;
 
-	cout<<"=====Registrar nuevo Asistente===== \nElija de asistente: \n1)Profesional 2)Estudiante 3)Artista"<<endl;
-	int tipo;
-	cin >> tipo;
+	if(resp == 1) {
+		cout<<"=====Registrar nuevo Asistente===== \nElija de asistente: \n1)Profesional 2)Estudiante 3)Artista"<<endl;
+		int tipo;
+		cin >> tipo;
 
-	if(tipo != 1 && tipo != 2 && tipo != 3) {
-		cout<<"Dato invalido";
-		return;
-	}
-
-	cout<<"Ingrese nombre del asistente: "<<endl;
-	string nombre;
-	cin >> nombre;
-
-	cout<<"Ingrese edad del asistente: "<<endl;
-	int edad;
-	cin >> edad;
-
-	string atributo;
-	Evento* evento;
-
-	switch(tipo) {
-		case 1:
-			cout<<"Profesional: señale la ocupacion: "<<endl;
-			cin >> atributo;
-			evento = new Profesional(nombre,edad,atributo);
-			break;
-		case 2:
-			cout<<"Estudiante: indique la institucion: "<<endl;
-			cin >> atributo;
-			evento = new Estudiante(nombre,edad,atributo);
-			break;
-		case 3:
-			cout<<"Artista: indique el nombre artistico: "<<endl;
-			cin >> atributo;
-			evento = new Artista(nombre,edad,atributo);
-			break;
+		if(tipo != 1 && tipo != 2 && tipo != 3) {
+			cout<<"Dato invalido";
+			return;
 		}
 
+		cout<<"Ingrese nombre del asistente: "<<endl;
+		string nombre;
+		cin >> nombre;
+
+		cout<<"Ingrese edad del asistente: "<<endl;
+		int edad;
+		cin >> edad;
+
+		string atributo;
+		Asistente* asistente;
+
+		switch(tipo) {
+			case 1:
+				cout<<"Profesional: señale la ocupacion: "<<endl;
+				cin >> atributo;
+				asistente = new Profesional(nombre,edad,atributo);
+				break;
+			case 2:
+				cout<<"Estudiante: indique la institucion: "<<endl;
+				cin >> atributo;
+				asistente = new Estudiante(nombre,edad,atributo);
+				break;
+			case 3:
+				cout<<"Artista: indique el nombre artistico: "<<endl;
+				cin >> atributo;
+				asistente = new Artista(nombre,edad,atributo);
+				break;
+			}
+	}
+
+	else if(resp == 2) {
+
+	}
 }
 
 void Sistema::getEventos() {
 
-	    list<Evento*>::iterator it = eventos.begin();
-	    Evento* aux;
-	    for(it; it<eventos.size(); it++){
-	    	aux = *it;
-	    	cout<<aux->getNombre()<<endl;
-	    }
 }
 
 

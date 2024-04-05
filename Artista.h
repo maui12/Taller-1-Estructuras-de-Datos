@@ -4,7 +4,7 @@
 
 using namespace std;
 
-class Artista:Asistente{
+class Artista:public Asistente{
 
     private:
         string nombreArtistico;
