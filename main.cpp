@@ -9,12 +9,15 @@ bool menu(Sistema* sistema) {
 
    	int entrada = 0;
 
-   	cout<<"MENU"<<endl;
+   	cout<<"----------------------------------"<<endl;
+   	cout<<":Gestion de Eventos y Asistentes:"<<endl;
+   	cout<<"----------------------------------"<<endl;
    	cout<<"1.- Crear nuevo evento"<<endl;
    	cout<<"2.- Registrar Asistente"<<endl;
    	cout<<"3.- Consultar lista de Asistentes"<<endl;
    	cout<<"4.- Generar Informe"<<endl;
    	cout<<"5.- Guardar cambios y salir"<<endl;
+   	cout<<"----------------------------------"<<endl;
    	cout<<"-Ingrese una opcion: "<<endl;
    	cin>>entrada;
 
@@ -27,7 +30,7 @@ bool menu(Sistema* sistema) {
    		sistema->registrarAsistente();
    		break;
    	case 3:
-
+   		sistema->consultarAsistentes();
    		break;
    	case 4:
 

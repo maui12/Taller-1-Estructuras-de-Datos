@@ -13,10 +13,9 @@ class Evento {
 
     public:
         Evento(string nombre);
-        Evento();
         string getNombre();
         void setNombre(string nombre);
-        void agregarAsistente(Asistente asistente);
+        void agregarAsistente(Asistente* asistente);
         virtual string toString() = 0;
 
 };

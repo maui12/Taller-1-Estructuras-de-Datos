@@ -13,3 +13,6 @@ string Profesional::getOcupacion(){
 void Profesional::setOcupacion(string ocupacion){
     this -> ocupacion = ocupacion;
 }
+string Profesional::toStringAsistente() {
+	return "Profesional - Nombre: "+getNombre()+" - Ocupacion: "+getOcupacion();
+}

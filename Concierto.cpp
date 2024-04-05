@@ -19,7 +19,7 @@ void Concierto::setDuracion(int duracion) {
 
 string Concierto::toString() {
 
-	return "Concierto - Nombre: "+getNombre()+" - Duracion: "+getDuracion();
+	return "Concierto - Nombre: "+getNombre()+" - Duracion: "+to_string(getDuracion());
 
 }
 

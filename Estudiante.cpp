@@ -13,3 +13,7 @@ string Estudiante::getInstitucion(){
 void Estudiante::setInstitucion(string institucion){
     this -> institucion = institucion;
 }
+
+string Estudiante::toStringAsistente() {
+	return "Estudiante - Nombre: "+getNombre()+" - Institucion: "+getInstitucion();
+}

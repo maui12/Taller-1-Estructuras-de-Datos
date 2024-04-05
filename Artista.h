@@ -12,4 +12,5 @@ class Artista:public Asistente{
         Artista(string nombre, int edad, string nombreArtistico);
         string getNombreArtistico();
         void setNombreArtistico(string nombreArtistico);
+        string toStringAsistente();
 };

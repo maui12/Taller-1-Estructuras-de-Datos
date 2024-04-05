@@ -15,3 +15,7 @@ string Artista::getNombreArtistico(){
 void Artista::setNombreArtistico(string nombreArtistico){
     this -> nombreArtistico = nombreArtistico;
 }
+
+string Artista::toStringAsistente() {
+	return "Artista - Nombre: "+getNombre()+" - Nombre Artistico: "+getNombreArtistico();
+}

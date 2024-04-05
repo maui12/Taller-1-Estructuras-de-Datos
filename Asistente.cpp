@@ -30,3 +30,7 @@ void Asistente::setEdad(int edad) {
 void Asistente::agregarEvento(Evento* evento) {
 
 }
+
+string toStringAsistente(){
+	return "";
+}
