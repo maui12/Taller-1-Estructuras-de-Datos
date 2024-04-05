@@ -5,7 +5,7 @@
 
 using namespace std;
 
-bool menu(Sistema sistema) {
+bool menu(Sistema* sistema) {
 
    	int entrada = 0;
 
@@ -21,10 +21,10 @@ bool menu(Sistema sistema) {
    	switch(entrada) {
 
    	case 1:
-   		sistema.CrearEvento();
+   		sistema->CrearEvento();
    		break;
    	case 2:
-
+   		sistema->registrarAsistente();
    		break;
    	case 3:
 
@@ -45,7 +45,7 @@ bool menu(Sistema sistema) {
 
 int main() {
 
-	Sistema sistema;
+	Sistema* sistema = new Sistema();
 
 	bool salir = true;
 

@@ -1,5 +1,6 @@
 #include <iostream>
 #include <list>
+#include <vector>
 #include "Sistema.h"
 #include "Evento.h"
 #include "Asistente.h"
@@ -12,11 +13,9 @@
 
 using namespace std;
 
-Sistema::Sistema() {
-	list<Evento*> ev;
-	this -> eventos = ev;
-	this -> asistentes = asistentes;
 
+
+Sistema::Sistema() {
 }
 
 void Sistema::CrearEvento() {
@@ -63,7 +62,7 @@ void Sistema::CrearEvento() {
 
 void Sistema::registrarAsistente() {
 
-	cout<<"Desea registrar un nuevo Asistente o uno ya existente? \n1)Nuevol 2)Existente"<<endl;
+	cout<<"Desea registrar un nuevo Asistente o uno ya existente? \n1)Nuevo 2)Existente"<<endl;
 	int resp;
 	cin >> resp;
 
@@ -105,15 +104,42 @@ void Sistema::registrarAsistente() {
 				asistente = new Artista(nombre,edad,atributo);
 				break;
 			}
+
+		cout<<asistentes.size()<<endl;
+		asistentes.push_back(asistente);
+		cout<<asistentes.size()<<endl;
+
+		cout<<"Asistente creado"<<endl;
 	}
 
 	else if(resp == 2) {
+		cout<<"Indique el nombre del asistente: "<<endl;
+		string nombre;
+		cin >> nombre;
+
+		Asistente* asistenteEncontrado = getAsistentePorNombre(asistentes, nombre);
+
+		if(asistenteEncontrado == NULL) {
+			cout<< "Asistente no encontrado"<<endl;
+		}
+
+		cout<< asistenteEncontrado->getNombre()<<endl;
 
 	}
 }
 
 void Sistema::getEventos() {
 
+}
+
+Asistente* Sistema::getAsistentePorNombre(list<Asistente*> asistentes,string nombre) {
+    for(list<Asistente*>::iterator it = asistentes.begin(); it != asistentes.end(); it++ ){
+        Asistente* a = *it;
+        if(a->getNombre() == nombre) {
+            return a;
+        }
+    }
+    return NULL;
 }
 
 

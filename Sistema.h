@@ -16,5 +16,5 @@ class Sistema {
 		void registrarAsistente();
 		void getEventos();
 
-
+		Asistente* getAsistentePorNombre(list<Asistente*> asistentes,string nombre);
 };
