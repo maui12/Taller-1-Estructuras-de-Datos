@@ -15,3 +15,7 @@ string Conferencia::getTema() {
 void Conferencia::setTema(string tema) {
 	this -> tema = tema;
 }
+
+string Conferencia::toString() {
+	return "Conferencia - Nombre: "+getNombre()+" - Tema: "+getTema();
+}

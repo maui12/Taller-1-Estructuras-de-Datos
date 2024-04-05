@@ -6,8 +6,6 @@ using namespace std;
 
 Evento::Evento(string nombre) {
 	this -> nombre = nombre;
-	//asistentes = new Asistente*[100];
-	this -> asistentes = new Asistente[100];
 }
 
 Evento::Evento(){}
@@ -23,3 +21,10 @@ void Evento::setNombre(string nombre) {
 void agregarAsistente(Asistente asistente) {
 
 }
+
+string toString(){
+	return "a";
+}
+
+
+

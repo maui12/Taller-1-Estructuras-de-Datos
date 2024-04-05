@@ -15,3 +15,8 @@ string Taller::getUbicacion() {
 void Taller::setUbicacion(string ubicacion) {
 	this -> ubicacion = ubicacion;
 }
+
+string Taller::toString() {
+
+	return "Taller - Nombre: "+getNombre()+" - Ubicacion: "+getUbicacion();
+}

@@ -7,7 +7,6 @@ using namespace std;
 Asistente::Asistente(string nombre,int edad) {
     this -> nombre = nombre;
     this -> edad = edad;
-    this -> eventos = new Evento[50];
 }
 
 Asistente::Asistente() {}

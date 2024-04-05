@@ -12,4 +12,5 @@ class Conferencia:public Evento {
 		Conferencia(string nombre, string tema);
 		string getTema();
 		void setTema(string tema);
+		string toString();
 };

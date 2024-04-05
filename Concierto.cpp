@@ -16,3 +16,10 @@ int Concierto::getDuracion() {
 void Concierto::setDuracion(int duracion) {
 	this -> duracion = duracion;
 }
+
+string Concierto::toString() {
+
+	return "Concierto - Nombre: "+getNombre()+" - Duracion: "+getDuracion();
+
+}
+

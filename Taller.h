@@ -12,4 +12,5 @@ class Taller:public Evento {
 		Taller(string nombre,string ubicacion);
 		string getUbicacion();
 		void setUbicacion(string ubicacion);
+		string toString();
 };

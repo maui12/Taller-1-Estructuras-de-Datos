@@ -1,5 +1,6 @@
 #pragma once
 #include <iostream>
+#include <list>
 class Evento;
 
 using namespace std;
@@ -8,7 +9,7 @@ class Asistente {
     private:
         string nombre;
         int edad;
-        Evento* eventos;
+        list<Evento*> eventos;
 
     public:
         Asistente(string nombre,int edad);

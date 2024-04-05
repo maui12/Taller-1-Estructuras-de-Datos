@@ -105,12 +105,10 @@ void Sistema::registrarAsistente() {
 				break;
 			}
 
-		cout<<asistentes.size()<<endl;
 		asistentes.push_back(asistente);
-		cout<<asistentes.size()<<endl;
-
 		cout<<"Asistente creado"<<endl;
 	}
+
 
 	else if(resp == 2) {
 		cout<<"Indique el nombre del asistente: "<<endl;
@@ -121,15 +119,39 @@ void Sistema::registrarAsistente() {
 
 		if(asistenteEncontrado == NULL) {
 			cout<< "Asistente no encontrado"<<endl;
+			return;
 		}
 
-		cout<< asistenteEncontrado->getNombre()<<endl;
+		cout<< asistenteEncontrado->getNombre()<<": Asistente encontrado"<<endl;
+	}
+
+	cout<<"¿Quiere inscribir eventos a este asistente?\n1)Si 2)No"<<endl;
+	cin >> resp;
+
+	if(resp==1) {
+		if(eventos.size() == 0) {
+			cout<<"No hay eventos"<<endl;
+			return;
+		}
+		cout<<"Seleccione un evento: "<<endl;
+		getEventos();
+
+		int seleccion;
+		cin >> seleccion;
 
 	}
+
+
 }
 
 void Sistema::getEventos() {
-
+	int contador = 1;
+	Evento* e;
+	for(list<Evento*>::iterator it = eventos.begin(); it != eventos.end(); it++ ){
+		e = *it;
+		cout<<contador<<") "<<e->toString()<<endl;
+		contador++;
+	}
 }
 
 Asistente* Sistema::getAsistentePorNombre(list<Asistente*> asistentes,string nombre) {
