@@ -1,6 +1,7 @@
 #include <iostream>
 #include <list>
-#include <vector>
+#include <fstream>
+#include <sstream>
 #include "Sistema.h"
 #include "Evento.h"
 #include "Asistente.h"
@@ -16,6 +17,119 @@ using namespace std;
 
 
 Sistema::Sistema() {
+}
+
+void Sistema::leer() {
+	ifstream archivo("Asistentes.txt");
+	    string linea;
+	    while (getline(archivo, linea)) {
+			stringstream ss(linea);
+			string tipo, nombre, atributo;
+	        int edad;
+	        getline(ss, tipo, ',');
+	        getline(ss, nombre, ',');
+	        ss >> edad;
+	        ss.ignore();
+	        getline(ss, atributo);
+			Asistente* asistente;
+				if(tipo=="Profesional"){
+					asistente = new Profesional(nombre,edad,atributo);
+				}
+				else if(tipo=="Estudiante"){
+					asistente = new Estudiante(nombre,edad,atributo);
+				}
+				else if(tipo=="Artista"){
+					asistente = new Artista(nombre,edad,atributo);
+				}else{
+					cout<<tipo<<": no es un tipo valido de Asistente."<<endl;
+				}
+			asistentes.push_back(asistente);
+	    }
+	    archivo.close();
+
+		ifstream archivo2("Evento.txt");
+	    string linea2;
+	    while (getline(archivo2, linea2)) {
+			stringstream ss(linea2);
+			string tipo, nombre, atributo;
+			int duracion;
+	        getline(ss, tipo, ',');
+	        getline(ss, nombre, ',');
+			if(tipo=="Concierto"){
+				ss >> duracion;
+	        	ss.ignore();
+			}else{
+	        getline(ss, atributo);
+			}
+			Evento* evento;
+				if(tipo=="Concierto"){
+					evento = new Concierto(nombre,duracion);
+				}
+				else if(tipo=="Conferencia"){
+					evento = new Conferencia(nombre,atributo);
+				}
+				else if(tipo=="Taller"){
+					evento = new Taller(nombre,atributo);
+				}else{
+					cout<<tipo<<": no es un tipo valido de Asistente."<<endl;
+				}
+			eventos.push_back(evento);
+
+		}
+		archivo2.close();
+		return;
+	}
+
+
+void Sistema::guardarCambios() {
+	 fstream archivo;
+	 archivo.open("Asistentes.txt", ios::out);
+
+	 if(archivo.is_open()) {
+		 Asistente* a;
+		 string linea;
+		 for(list<Asistente*>::iterator it = asistentes.begin(); it != asistentes.end(); it++ ){
+		 	a = *it;
+		 	switch(a->yoSoy()) {
+		 	case 1:
+		 		linea = "Artista,"+a->getNombre()+","+to_string(a->getEdad())+","+a->getAtributo();
+		 		break;
+		 	case 2:
+		 		linea = "Estudiante,"+a->getNombre()+","+to_string(a->getEdad())+","+a->getAtributo();
+		 		break;
+		 	case 3:
+		 		linea = "Profesional,"+a->getNombre()+","+to_string(a->getEdad())+","+a->getAtributo();
+		 		break;
+		 	}
+		 	archivo << linea + "\n";
+		 }
+
+	 }
+
+	 archivo.close();
+
+	 fstream archivo1;
+	 archivo1.open("Evento.txt", ios::out);
+
+	 if(archivo1.is_open()) {
+		 Evento* e;
+		 string linea;
+		 for(list<Evento*>::iterator it = eventos.begin(); it != eventos.end(); it++ ){
+			 e = *it;
+			 switch(e->getTipo()) {
+			 case 1:
+				 linea = "Concierto,"+e->getNombre()+","+e->getAtributoEvento();
+				 break;
+			 case 3:
+				 linea = "Taller,"+e->getNombre()+","+e->getAtributoEvento();
+				 break;
+			 case 2:
+				 linea = "Conferencia,"+e->getNombre()+","+e->getAtributoEvento();
+				 break;
+			 }
+			 archivo1 << linea + "\n";
+		 }
+	}
 }
 
 void Sistema::CrearEvento() {

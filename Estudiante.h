@@ -13,4 +13,5 @@ class Estudiante:public Asistente{
         void setInstitucion(string institucion);
         string toStringAsistente();
         int yoSoy();
+        string getAtributo();
 };

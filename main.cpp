@@ -36,7 +36,7 @@ bool menu(Sistema* sistema) {
 		sistema->menuInformes();
    		break;
    	case 5:
-
+   		sistema->guardarCambios();
    		return false;
    	default:
    		cout<<"Opcion invalida. ingrese otra opcion "<<endl;
@@ -49,6 +49,7 @@ bool menu(Sistema* sistema) {
 int main() {
 
 	Sistema* sistema = new Sistema();
+	sistema->leer();
 
 	bool salir = true;
 

@@ -20,3 +20,10 @@ string Taller::toString() {
 
 	return "Taller - Nombre: "+getNombre()+" - Ubicacion: "+getUbicacion();
 }
+
+string Taller::getAtributoEvento() {
+	return ubicacion;
+}
+int Taller::getTipo() {
+	return 3;
+}

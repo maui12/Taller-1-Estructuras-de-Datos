@@ -28,5 +28,12 @@ string toString(){
 int Evento::getNumeroAsistente() {
 	return asistentes.size();
 }
+string Evento::getAtributoEvento() {
+	return "";
+}
+
+int Evento::getTipo() {
+	return 0;
+}
 
 

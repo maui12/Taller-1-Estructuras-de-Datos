@@ -13,4 +13,6 @@ class Conferencia:public Evento {
 		string getTema();
 		void setTema(string tema);
 		string toString();
+		string getAtributoEvento();
+		int getTipo();
 };

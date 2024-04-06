@@ -23,3 +23,10 @@ string Concierto::toString() {
 
 }
 
+string Concierto::getAtributoEvento() {
+	return to_string(duracion);
+}
+
+int Concierto::getTipo() {
+	return 1;
+}

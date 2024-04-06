@@ -13,5 +13,7 @@ class Concierto:public Evento {
 		int getDuracion();
 		void setDuracion(int duracion);
 		string toString();
+		string getAtributoEvento();
+		int getTipo();
 
 };

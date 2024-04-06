@@ -12,6 +12,7 @@ class Sistema {
 		list<Asistente*> asistentes;
 	public:
 		Sistema();
+		void leer();
 		void CrearEvento();
 		void registrarAsistente();
 		void consultarAsistentes();
@@ -21,8 +22,10 @@ class Sistema {
 		void menuInformes();
 		void estadisticasEventosAsistencia();
 		void estadisticasAsistentes();
+		void guardarCambios();
 
 		Evento* getEventoPorIndex(list<Evento*> eventos,int i);
 		Asistente* getAsistentePorNombre(list<Asistente*> asistentes,string nombre);
 		Asistente* determinarAsistente();
+
 };

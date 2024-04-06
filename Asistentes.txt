@@ -1,0 +1,5 @@
+Estudiante,Juan,20,UCN
+Profesional,Jose Luis,30,Profesor
+Artista,Benito,27,Bad Bunny
+Estudiante,Luis,20,UCN
+Artista,Arnold Schwarzenegger,31,Terminator

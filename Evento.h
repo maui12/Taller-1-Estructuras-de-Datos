@@ -18,5 +18,7 @@ class Evento {
         void agregarAsistente(Asistente* asistente);
         virtual string toString() = 0;
         int getNumeroAsistente();
+        virtual string getAtributoEvento() = 0;
+        virtual int getTipo() = 0;
 
 };

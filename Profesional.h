@@ -15,4 +15,5 @@ class Profesional:public Asistente {
 		void setOcupacion(string ocupacion);
 		string toStringAsistente();
 		int yoSoy();
+		string getAtributo();
 };

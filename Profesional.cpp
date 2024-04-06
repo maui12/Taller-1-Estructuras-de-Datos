@@ -19,3 +19,6 @@ string Profesional::toStringAsistente() {
 int Profesional::yoSoy(){
     return 3;
 }
+string Profesional::getAtributo() {
+	return ocupacion;
+}

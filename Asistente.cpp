@@ -37,3 +37,7 @@ string toStringAsistente(){
 int yoSoy(){
     return 0;
 }
+
+string getAtributo() {
+	return "";
+}

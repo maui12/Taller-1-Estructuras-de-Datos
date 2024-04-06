@@ -22,3 +22,7 @@ string Artista::toStringAsistente() {
 int Artista::yoSoy(){
     return 1;
 }
+
+string Artista::getAtributo() {
+	return nombreArtistico;
+}

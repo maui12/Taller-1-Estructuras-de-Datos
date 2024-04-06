@@ -19,3 +19,10 @@ void Conferencia::setTema(string tema) {
 string Conferencia::toString() {
 	return "Conferencia - Nombre: "+getNombre()+" - Tema: "+getTema();
 }
+
+string Conferencia::getAtributoEvento() {
+	return tema;
+}
+int Conferencia::getTipo() {
+	return 2;
+}

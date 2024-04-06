@@ -20,3 +20,7 @@ string Estudiante::toStringAsistente() {
 int Estudiante::yoSoy(){
     return 2;
 }
+
+string Estudiante::getAtributo() {
+	return institucion;
+}
