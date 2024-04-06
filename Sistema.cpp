@@ -334,7 +334,7 @@ void Sistema::menuInformes(){
 					printEventos();
 					break;
 				case 2:
-					printAsistentes();
+					asistentePorEvento();
 					break;
 				case 3:
 					estadisticasEventosAsistencia();
@@ -405,5 +405,21 @@ void Sistema::estadisticasAsistentes(){
 	
 	}
 	cout<<"edad promedio Asistentes: "<<(edades/contador)<<" - Clases mas comunes: "<<mayorclase<< ", "<<segundaclase<<endl; 
+}
+void Sistema::asistentePorEvento(){
+	Evento* e;
+	for(list<Evento*>::iterator it = eventos.begin(); it != eventos.end(); it++ ){
+		e = *it;
+		list<Asistente*> listaAsis = e->getAsistentes();
+		cout<<"Asistentes registrados en el evento: "<<e->getNombre()<<endl;
+		Asistente* a;
+		int contador = 0;
+		for(list<Asistente*>::iterator it2 = listaAsis.begin(); it2 != listaAsis.end(); it2++ ){
+			a = *it2;
+			cout<<"["<<contador++<<"] "<<a->toStringAsistente()<<endl;
+		}
+		cout<<"--------------------------"<<endl;
+
+	}
 }
 //g++ Asistente.cpp Artista.cpp Estudiante.cpp Profesional.cpp Evento.cpp Concierto.cpp Conferencia.cpp Taller.cpp Sistema.cpp main.cpp 

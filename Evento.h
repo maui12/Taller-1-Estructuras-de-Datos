@@ -20,5 +20,6 @@ class Evento {
         int getNumeroAsistente();
         virtual string getAtributoEvento() = 0;
         virtual int getTipo() = 0;
+        list<Asistente*> getAsistentes();
 
 };

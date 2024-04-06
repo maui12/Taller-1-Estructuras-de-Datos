@@ -23,6 +23,7 @@ class Sistema {
 		void estadisticasEventosAsistencia();
 		void estadisticasAsistentes();
 		void guardarCambios();
+		void asistentePorEvento();
 
 		Evento* getEventoPorIndex(list<Evento*> eventos,int i);
 		Asistente* getAsistentePorNombre(list<Asistente*> asistentes,string nombre);

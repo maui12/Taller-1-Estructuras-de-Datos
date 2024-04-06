@@ -35,5 +35,8 @@ string Evento::getAtributoEvento() {
 int Evento::getTipo() {
 	return 0;
 }
+list<Asistente*> Evento::getAsistentes() {
+	return asistentes;
+}
 
 
