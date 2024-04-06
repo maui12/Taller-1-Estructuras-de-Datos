@@ -25,6 +25,8 @@ void Evento::agregarAsistente(Asistente* asistente) {
 string toString(){
 	return "";
 }
-
+int Evento::getNumeroAsistente() {
+	return asistentes.size();
+}
 
 

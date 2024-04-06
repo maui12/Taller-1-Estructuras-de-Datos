@@ -33,7 +33,7 @@ bool menu(Sistema* sistema) {
    		sistema->consultarAsistentes();
    		break;
    	case 4:
-
+		sistema->menuInformes();
    		break;
    	case 5:
 

@@ -13,4 +13,5 @@ class Artista:public Asistente{
         string getNombreArtistico();
         void setNombreArtistico(string nombreArtistico);
         string toStringAsistente();
+        int yoSoy();
 };

@@ -17,3 +17,6 @@ void Estudiante::setInstitucion(string institucion){
 string Estudiante::toStringAsistente() {
 	return "Estudiante - Nombre: "+getNombre()+" - Institucion: "+getInstitucion();
 }
+int Estudiante::yoSoy(){
+    return 2;
+}

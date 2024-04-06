@@ -205,6 +205,91 @@ Asistente* Sistema::determinarAsistente() {
 	return NULL;
 
 }
+void Sistema::menuInformes(){
+	while(true){
+		cout<<"1.- Lista de Eventos programados "<<endl;
+		cout<<"2.- Lista de Asistentes registrados para cada evento "<<endl;
+		cout<<"3.- Estadisticas de Asistencia a Eventos "<<endl;
+		cout<<"4.- Detalles de asistentes "<<endl;
+		cout<<"5.- Detalles de un evento "<<endl;
+		cout<<"6.- salir "<<endl;
+			int tipo;
+			cin >> tipo;
+		switch(tipo) {
+				case 1:
+					printEventos();
+					break;
+				case 2:
+					printAsistentes();
+					break;
+				case 3:
+					estadisticasEventosAsistencia();
+					break;
+				case 4:
+					estadisticasAsistentes();
+					break;
+				case 5:
+					
+					break;
+				case 6:
+					return;
+					break;
+				}
+	}
+}
+void Sistema::estadisticasEventosAsistencia(){
+	int contador = 0;
+	Evento* e;
+	for(list<Evento*>::iterator it = eventos.begin(); it != eventos.end(); it++ ){
+		e = *it;
+		cout<<"["<<contador<<"]"<<" Evento: "<<e->getNombre()<<"- cantidad asistentes: "<<e->getNumeroAsistente()<<endl;
+		contador++;
+	}
+}
 
+void Sistema::estadisticasAsistentes(){
+	int contArtista= 0;
+	int contEstudiante= 0;
+	int contProfesional= 0;
+	int contNoDef= 0;
+	int contador = 0;
+	int edades = 0;
+	Asistente* a;
+	for(list<Asistente*>::iterator it = asistentes.begin(); it != asistentes.end(); it++ ){
+		a = *it;
+		edades += a->getEdad();
+		contador++;
+		switch(a->yoSoy()) {
+			case 1:
+				contArtista++;
+				break;
+			case 2:
+				contEstudiante++;
+				break;
+			case 3:
+				contProfesional++;
+				break;
+			case 0:
+				contNoDef++;
+				break;
+			}
+	}
+	int mayor=0;
+	string mayorclase= "no definido";
+	string segundaclase = "no definido";
+	if(contArtista>mayor){
+		segundaclase = mayorclase;
+		mayorclase = "Artista";
 
-
+	}else if(contEstudiante>mayor){
+		segundaclase = mayorclase;
+		mayorclase = "Estudiante";
+	
+	}else if(contProfesional>mayor){
+		segundaclase = mayorclase;
+		mayorclase = "Profesional";
+	
+	}
+	cout<<"edad promedio Asistentes: "<<(edades/contador)<<" - Clases mas comunes: "<<mayorclase<< ", "<<segundaclase<<endl; 
+}
+//g++ Asistente.cpp Artista.cpp Estudiante.cpp Profesional.cpp Evento.cpp Concierto.cpp Conferencia.cpp Taller.cpp Sistema.cpp main.cpp 

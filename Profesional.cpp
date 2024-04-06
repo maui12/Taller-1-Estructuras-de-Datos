@@ -16,3 +16,6 @@ void Profesional::setOcupacion(string ocupacion){
 string Profesional::toStringAsistente() {
 	return "Profesional - Nombre: "+getNombre()+" - Ocupacion: "+getOcupacion();
 }
+int Profesional::yoSoy(){
+    return 3;
+}

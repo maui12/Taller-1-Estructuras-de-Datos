@@ -18,6 +18,10 @@ class Sistema {
 
 		void printAsistentes();
 		void printEventos();
+		void menuInformes();
+		void estadisticasEventosAsistencia();
+		void estadisticasAsistentes();
+
 		Evento* getEventoPorIndex(list<Evento*> eventos,int i);
 		Asistente* getAsistentePorNombre(list<Asistente*> asistentes,string nombre);
 		Asistente* determinarAsistente();

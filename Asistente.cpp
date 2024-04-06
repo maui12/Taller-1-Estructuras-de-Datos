@@ -34,3 +34,6 @@ void Asistente::agregarEvento(Evento* evento) {
 string toStringAsistente(){
 	return "";
 }
+int yoSoy(){
+    return 0;
+}

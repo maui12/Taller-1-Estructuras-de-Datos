@@ -20,5 +20,5 @@ class Asistente {
         void setEdad(int edad);
         void agregarEvento(Evento* evento);
         virtual string toStringAsistente() = 0;
-
+        virtual int yoSoy() = 0;
 };
