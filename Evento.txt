@@ -3,4 +3,3 @@ Concierto,Trueno,180
 Taller,Ciber seguridad,UCN
 Conferencia,Noche de tarreo,pizza
 Taller,Estructura datos,UCN
-Concierto,a,3
